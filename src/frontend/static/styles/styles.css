@@ -356,10 +356,17 @@ main {
   margin-top: 8px;
   font-size: 14px;
   cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #ffe08a;
+  color: #4a2c00;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
 }
 
 .compare-control input {
   margin: 0;
+  accent-color: #ff8a00;
 }
 
 .compare-bar {
