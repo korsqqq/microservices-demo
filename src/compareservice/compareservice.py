@@ -16,7 +16,7 @@
 
 import os
 import grpc
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 
 import demo_pb2
 import demo_pb2_grpc
@@ -41,6 +41,11 @@ def create_app():
     @app.route('/health', methods=['GET'])
     def health():
         return jsonify({"status": "healthy"}), 200
+
+    @app.route('/openapi.yaml', methods=['GET'])
+    def openapi_spec():
+        spec_path = os.path.join(os.path.dirname(__file__), 'openapi.yaml')
+        return send_file(spec_path, mimetype='application/yaml')
 
     @app.route('/compare', methods=['POST'])
     def compare_products():
